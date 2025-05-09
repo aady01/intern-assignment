@@ -7,9 +7,7 @@ const nextConfig = {
     return config;
   },
   // Add this to ignore specific attributes during hydration mismatch checking
-  experimental: {
-    suppressHydrationWarning: true,
-  },
+  experimental: {},
 };
 
 module.exports = nextConfig;

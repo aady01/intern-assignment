@@ -1,17 +1,28 @@
-import { DoctorFilterParams } from "./types";
+import type { DoctorFilterParams } from "./types";
 import axios from "axios";
 
 export async function fetchDoctors(
-  filters: Record<string, any> = {},
+  filters: DoctorFilterParams = {},
   page = 1,
   limit = 10
 ) {
+  // Convert all filter values to strings
+  const stringifiedFilters: Record<string, string> = {};
+
+  // Add each filter as a string
+  Object.entries(filters).forEach(([key, value]) => {
+    if (value !== undefined && value !== null) {
+      stringifiedFilters[key] = String(value);
+    }
+  });
+
+  // Add pagination params
   const params = new URLSearchParams({
-    ...filters,
+    ...stringifiedFilters,
     page: String(page),
     limit: String(limit),
   });
-  console.log(process.env.NEXT_PUBLIC_API_BASE_URL);
+
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/list-doctor-with-filter?${params}`
   );
@@ -54,7 +65,7 @@ export async function addDoctor(doctor: {
     try {
       const errorData = await response.json();
       errorDetails = JSON.stringify(errorData);
-    } catch (e) {
+    } catch (_error) {
       errorDetails = `Status ${response.status}: ${response.statusText}`;
     }
 

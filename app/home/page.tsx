@@ -156,11 +156,13 @@ function LandingPage() {
               <div
                 className={`${dmSans.variable} flex items-center justify-between`}
               >
-                <h1 className="text-2xl sm:text-3xl font-bold text-amber-500 hover:text-amber-400 transition-colors">
-                  <a href="/" title="Apollo Healthcare Home">
-                    Apollo
-                  </a>
-                </h1>
+                <Link
+                  href="/"
+                  className="text-2xl sm:text-3xl font-bold text-amber-500 hover:text-amber-400 transition-colors"
+                  title="Apollo Healthcare Home"
+                >
+                  Apollo
+                </Link>
 
                 {/* Mobile menu toggle */}
                 <button
@@ -328,14 +330,14 @@ function LandingPage() {
                 <div className="text-center py-16">
                   <p className="text-red-400 text-lg mb-4">{error}</p>
                   <p className="text-gray-500 max-w-md mx-auto">
-                    We're showing some sample data. In production, this would
-                    connect to your backend API.
+                    We&apos;re showing some sample data. In production, this
+                    would connect to your backend API.
                   </p>
                 </div>
               )}
 
               {/* Doctor List */}
-              {!loading && !error && doctors.length === 0 && (
+              {!loading && doctors.length === 0 && (
                 <div className="text-center py-16">
                   <p className="text-gray-400 text-lg mb-4">
                     No doctors found matching your criteria
@@ -485,24 +487,24 @@ function LandingPage() {
               reserved.
             </p>
             <div className="flex space-x-6">
-              <a
+              <Link
                 href="/about"
                 className="text-gray-400 hover:text-amber-500 text-sm"
               >
                 About
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/contact"
                 className="text-gray-400 hover:text-amber-500 text-sm"
               >
                 Contact
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/privacy"
                 className="text-gray-400 hover:text-amber-500 text-sm"
               >
                 Privacy Policy
-              </a>
+              </Link>
             </div>
           </div>
 
