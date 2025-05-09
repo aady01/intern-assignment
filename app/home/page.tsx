@@ -5,8 +5,6 @@ import Filter from "@/components/Filter";
 import DoctorCard from "@/components/DoctorCard";
 import { fetchDoctors } from "@/app/lib/api";
 import { Doctor, DoctorFilterParams, PaginatedResponse } from "@/app/lib/types";
-import Head from "next/head";
-import { Metadata } from "next";
 import Link from "next/link";
 
 // Initialize DM Sans font

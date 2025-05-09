@@ -1,5 +1,4 @@
 import type { DoctorFilterParams } from "./types";
-import axios from "axios";
 
 export async function fetchDoctors(
   filters: DoctorFilterParams = {},
@@ -65,7 +64,7 @@ export async function addDoctor(doctor: {
     try {
       const errorData = await response.json();
       errorDetails = JSON.stringify(errorData);
-    } catch (_error) {
+    } catch (_) {
       errorDetails = `Status ${response.status}: ${response.statusText}`;
     }
 
