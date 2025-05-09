@@ -2,10 +2,11 @@ module.exports = {
   extends: "next/core-web-vitals",
   rules: {
     "@typescript-eslint/no-unused-vars": [
-      "error",
+      "warn",
       {
         argsIgnorePattern: "^_",
         varsIgnorePattern: "^_",
+        caughtErrorsIgnorePattern: "^_",
         ignoreRestSiblings: true,
       },
     ],

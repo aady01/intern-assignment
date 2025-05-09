@@ -64,7 +64,7 @@ export async function addDoctor(doctor: {
     try {
       const errorData = await response.json();
       errorDetails = JSON.stringify(errorData);
-    } catch (_) {
+    } catch {
       errorDetails = `Status ${response.status}: ${response.statusText}`;
     }
 
