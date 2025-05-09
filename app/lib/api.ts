@@ -11,7 +11,7 @@ export async function fetchDoctors(
     page: String(page),
     limit: String(limit),
   });
-
+  console.log(process.env.NEXT_PUBLIC_API_BASE_URL);
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/list-doctor-with-filter?${params}`
   );
