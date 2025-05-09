@@ -1,0 +1,9 @@
+// NOTE: This is not a real image file.
+// Please use an actual image file for production.
+// You can either:
+// 1. Create a doctor-placeholder.jpg file in the public directory
+// 2. Use any online placeholder service by updating the URL in DoctorCard.tsx
+// 
+// Example placeholder URLs that could be used instead:
+// https://placehold.co/300x400/gray/white?text=Doctor
+// https://via.placeholder.com/300x400?text=Doctor+Image 
